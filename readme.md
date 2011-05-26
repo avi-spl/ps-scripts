@@ -21,7 +21,7 @@ Pushes specified branch to remote origin, sets up local branch to track remote a
 Creates new local branch setup to track remote branch and checks out new local branch.
 
 #### gbdelete [branch_name]
-Deletes specified branch from remote and local.
+Deletes specified branch from remote and local. Will not work for "master" or "develop" branch.
 
 #### gco [branch_name]
 Checks out specified branch.
@@ -36,6 +36,12 @@ This effectively stages all new files, modified files and removed files, and the
 #### gcam [commit_msg]
 Runs 'git add -A' followed by 'git commit -m commit_msg'.
 This effectively stages all new files, modified files and removed files, and then commits with the supplied message.
+
+#### gpull
+Runs 'git pull --rebase'.
+
+#### gpush
+Runs 'git push'.
 
 ### git-reup.ps1
 * stash any local changes

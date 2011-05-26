@@ -49,6 +49,11 @@ function git-branchdelete {
 	if($branch_to_delete -eq "") {
 		return
 	}
+	if($branch_to_delete -eq "develop" -or $branch_to_delete -eq "master") {
+		write "Cannot delete branch '$branch_to_delete'!"
+		write "If you really want to do this, run the git commands yourself."
+		return
+	}
 	git push origin :refs/heads/$branch_to_delete
 	git branch -d $branch_to_delete
 }
@@ -79,3 +84,13 @@ function git-commit-all-with-msg {
 	git commit -m $args[0]
 }
 Set-Alias -Name gcam -Value git-commit-all-with-msg
+
+function git-pull {
+	git pull --rebase
+}
+Set-Alias -Name gpull -Value git-pull
+
+function git-push {
+	git push
+}
+Set-Alias -Name gpush -Value git-push
