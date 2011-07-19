@@ -59,6 +59,12 @@ function git-branchdelete {
 }
 Set-Alias -Name gbdelete -Value git-branchdelete
 
+function git-branchclean {
+	write "Running 'git remote prune origin'..."
+	git remote prune origin
+}
+Set-Alias -Name gbclean -Value git-branchclean
+
 function git-undo {
 	git reset --soft HEAD^
 }

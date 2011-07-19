@@ -23,6 +23,9 @@ Creates new local branch setup to track remote branch and checks out new local b
 #### gbdelete [branch_name]
 Deletes specified branch from remote and local. Will not work for "master" or "develop" branch.
 
+#### gbclean [branch_name]
+Removes all stale remote-tracking branches for origin.
+
 #### gco [branch_name]
 Checks out specified branch.
 
